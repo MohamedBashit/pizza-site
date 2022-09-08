@@ -1,0 +1,510 @@
+/* Start Variables */
+:root{
+    --font-color-main : #000000;
+    --font-color-sub : #DC143C;
+    --font-color-sub1 :#fff;
+}
+/* End Variables */
+
+/* Start Global Rules */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Prompt', sans-serif;
+}
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+/* Small */
+
+@media(min-width : 768px){
+    .container{
+        width: 750px;
+    }
+}
+/* Medium */
+@media(min-width : 992px){
+    .container{
+        width: 970px;
+    }
+}
+/* Large */
+@media(min-width : 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* End Global Rules */
+
+/* Start Header */
+.header{
+    height: 0;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:relative;
+
+}
+.header .container .logo h1{
+    color: rgb(69, 232, 69)
+}
+.header .container .links{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header .container .links ul{
+    list-style: none;
+}
+.header .container .links ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.header .container .links ul li a{
+    text-decoration: none;
+    color: var(--font-color-sub1);
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+    letter-spacing: 2px;
+}
+.header .container .links ul li a:hover,
+.header .container .links i:hover{
+    color: rgb(69, 232, 69);
+}
+.header .container .links ul li:nth-child(5){
+    border: 1px solid var(--font-color-sub1);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.header .container .links .fa-basket-shopping{
+    color: var(--font-color-sub1);
+    border: 1px dashed var(--font-color-sub1);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.header .container .links .toggle-menu{
+    background: none;
+    position: relative;
+    width: 28px;
+    border: none;
+    margin-right: 15px;
+    display: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.header .container .links .toggle-menu:hover span{
+    background-color:rgb(69, 232, 69);
+}
+.header .container .links .toggle-menu.menu-active::before{
+    content: "";
+    border-color: transparent transparent var(--font-color-sub) transparent;
+    border-style: solid;
+    border-width: 8px;
+    position: absolute;
+    bottom: -15px;
+    left: 6px;
+}
+
+.header .container .links .toggle-menu span{
+    display: block;
+    background-color: var(--font-color-sub1);
+    margin-bottom: 6px;
+    height: 3px;
+}
+.header .container .links .toggle-menu span:nth-child(3){
+    margin-bottom: 0;
+}
+
+
+@media(max-width : 768px){
+    .header .container .links ul{
+        display: none;
+    }
+    .header .container .links .toggle-menu{
+        display: block;
+    }
+    .header .container .links ul.open{
+    position: absolute;
+    width: 41%;
+    background-color: var(--font-color-sub);
+    top: 65px;
+    right: 0;
+    margin-right: 15px;
+    display: block;
+    border-radius: 6px;
+    text-align: center;
+    padding: 10px;
+    }
+
+    .header .container .links ul.open li{ 
+        display: block;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .header .container .links ul li:nth-child(5){
+        border: none;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .header .container .links ul li a{
+        text-decoration: none;
+        color: var(--font-color-sub1);
+        font-size: 12px;
+        font-weight: bold;
+        transition: .3s;
+    }
+}
+
+/* End Header */
+
+
+/* Start Landing */
+.land{
+    background-image: url(../uploads/image/pizza-photo1.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.overflow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000006b;
+}
+.land .container .content{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.land .container .content h2{
+    color: var(--font-color-sub1);
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+.land .container .content h2 span{
+    color: rgb(255, 187, 0);
+}
+.land .container .content p{
+    color: var(--font-color-sub1);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.land .container .content button{
+    color: var(--font-color-sub1);
+    background-color: var(--font-color-sub);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media(max-width : 768px){
+    .land .container .content{
+        text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 386px;
+    }
+    .land .container .content h2{
+        font-size: 29px;
+    }
+    .land .container .content p{
+        font-size: 13px;
+    }
+    .land .container .content button{
+        padding: 8px 9px;
+    }
+}
+/* End Landing */
+
+/* Start Offers */
+.Offers{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.Offers .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.Offers .container .box{
+    text-align: center;
+    position: relative;
+}
+.Offers .container .box::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(119, 119, 119, 0.379);
+    width: 1px;
+    height: 100%;
+}
+.Offers .container .box img{
+    width: 150px;
+    height: 150px;
+}
+.Offers .container .box h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.Offers .container .box p{
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #777;
+}
+.Offers .container .box .price{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Offers .container .box .price p{
+
+}
+.Offers .container .box .price button{
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 8px 13px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px 0px #00000063;
+    cursor: pointer;
+    transition: .3s;
+    height: 30px;
+}
+.Offers .container .box .price button a{
+    text-decoration: none;
+    color: #000000;
+}
+.Offers .container .box .price button:hover{
+    background-color: #77777773;
+    box-shadow: 0px 0px 4px 0px #00000000;
+}
+@media(max-width : 568px){
+    .Offers .container{
+        gap: 35px;
+    }
+    .Offers .container .box img{
+        width: 150px;
+        height: 150px;
+    }
+    .Offers .container .box .price button{
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+@media(max-width : 768px){
+    .Offers .container{
+        gap: 35px;
+    }
+    .Offers .container .box img{
+        width: 150px;
+        height: 150px;
+    }
+}
+@media(max-width : 992px){
+    .Offers .container{
+        gap: 35px;
+    }
+    .Offers .container .box img{
+        width: 150px;
+        height: 150px;
+    }
+}
+@media(max-width : 1128px){
+    .Offers .container{
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 35px;
+    }
+    .Offers .container .box::before{
+        position: absolute;
+        top: -19px;
+        height: 1px;
+        width: 100%;
+    }
+    .Offers .container .box::before{
+        content: none;
+    }
+    .Offers .container .box img{
+        width: 150px;
+        height: 150px;
+    }
+}
+/* End Offers */
+
+/* Start About */
+.about{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.about .head{
+    text-align: center;
+    margin-bottom: 80px;
+}
+.about .head h3{
+    margin-bottom: 15px;
+    color: blue;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.about .head p{
+    color: #777;
+    line-height: 1.5;
+}
+.about .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    justify-items: center;
+    gap: 10px;
+}
+.about .container .image img{
+    width: 350px;
+    height: 350px;
+}
+.about .container .image{
+    position: relative;
+}
+.about .image::before{
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    background-color: #591e08;
+    width: 100%;
+    border-radius: 54px;
+    height: 59%;
+    z-index: -2;
+}
+.about .container .content{
+    text-align: start;
+}
+.about .container .content h4{
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+.about .container .content p{
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.about .container .content .ser{
+    display: grid;
+    grid-template-columns: 15% 80%;
+    
+}
+.about .container .content .ser .icon{
+    display: inline-grid;
+}
+.about .container .content .ser .icon i{
+    margin: 15px;
+    font-size: 25px;
+}
+.about .container .content .ser .icon i:nth-child(1){
+    color: var(--font-color-sub);
+}
+.about .container .content .ser .icon i:nth-child(2){
+    color: blue;
+}
+.about .container .content .ser .icon i:nth-child(3){
+    color: yellow;
+}
+
+@media(max-width : 568px){
+    .about .container{
+        display: block;
+    }
+    .about .head {
+        margin-bottom: 25px;
+    }
+    .about .head p{
+        font-size: 10px;
+    }
+    .about .container .image{
+        margin-bottom: 40px;
+    }
+    .about .image::before{
+        height: 100%;
+    }
+    .about .container .image img{
+        width: 150px;
+        height: 150px;
+    }
+    .about .container .content{
+        text-align: center;
+    }
+    .about .container .content h4{
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .about .container .content p{
+        font-size: 11px;
+    }
+    .about .container .content .ser{
+        display: block;
+    }
+    .about .container .content .ser .icon{
+        display: block;
+    }
+    .about .container .content .ser .icon i{
+        margin: 15px;
+        font-size: 25px;
+    }
+}
+@media(max-width : 768px){
+    .about .head {
+        margin-bottom: 25px;
+    }
+    .about .container .image{
+        margin-bottom: 40px;
+    }
+}
+@media(max-width : 992px){
+    .about .head {
+        margin-bottom: 25px;
+    }
+    .about .container .image{
+        margin-bottom: 40px;
+    }
+}
+@media(max-width : 1128px){
+    .about .head {
+        margin-bottom: 25px;
+    }
+    .about .container .image{
+        margin-bottom: 40px;
+    }
+}
+/* End About */
+
